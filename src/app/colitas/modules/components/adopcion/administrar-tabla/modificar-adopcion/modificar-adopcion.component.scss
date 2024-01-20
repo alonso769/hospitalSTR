@@ -1,0 +1,22 @@
+.fondo {
+    // padding-top: 50px;
+    position: relative;
+    background-image: url('/assets/colitas/images/2.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+.custom-file-upload {
+    cursor: pointer;
+    padding: 5px;
+    border: 2px solid #818c97; /* Color del borde alrededor del botón */
+    border-radius: 5px; /* Radio de borde para hacer el botón más redondo */
+    background-color: #818c97; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+  }
+  
+  .custom-file-upload:hover {
+    background-color: #1d1d1d; /* Cambia el color de fondo al pasar el mouse sobre el botón */
+  }

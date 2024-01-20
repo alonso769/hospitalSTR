@@ -1,0 +1,94 @@
+<app-nav-bar></app-nav-bar>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-12">
+
+
+      <div class="tabla col-12 mt-2 mb-2 p-2 md:p-8 card flex justify-content-center">
+        <div class="p-datatable-header ng-star-inserted">
+          <div class="flex flex-col md:flex-row md:justify-between md:items-center p-4">
+            <button pbutton="" pripple="" type="button" label="Secondary"
+              class="p-button p-ripple p-button-secondary p-component"
+              (click)="router.navigate(['/auth/registro'])">
+              <span class="p-button-label">Registrar nuevo Usuario</span>
+              <span class="p-ink"></span>
+            </button>
+          
+            <div class="flex items-center mt-4 md:mt-0 ml-auto">
+              <span class="p-input-icon-left">
+                <i class="pi pi-search"></i>
+                <input pInputText type="text" placeholder="Buscar por Nombre" [(ngModel)]="buscarTexto"
+                    (input)="onGlobalFilter(buscarTexto)" class="p-inputtext p-component p-element w-full sm:w-auto">
+            </span>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="table">
+          <table class="table table-bordered table-hover">
+            <thead class="thead-dark">
+              <tr>
+                <th style="display: none;">ID</th>
+                <!-- <th class="text-center align-middle">Obtener Id</th> -->
+
+                <!-- <th class="text-center align-middle">Id</th> -->
+                <th class="text-center align-middle">Nombres</th>
+                <th class="text-center align-middle">Apellidos</th>
+                <th class="text-center align-middle">Email</th>
+                <th class="text-center align-middle">ROL</th>
+                <th class="text-center align-middle">Seleccionar ROL</th>
+                <!-- <th class="text-center align-middle">Fecha de Creación</th> -->
+
+                <th class="text-center align-middle">Acciones</th>
+            </thead>
+
+            <tbody>
+              <tr *ngFor="let usuario of usuarios">
+                <!-- <td>
+                  <button pbutton="" pripple="" type="button" label="Success" class="btn btn-danger"
+                  (click)="obtenerId(id)" data-toggle="tooltip" data-placement="top" title="Modificar" style="margin-right: 5px;">
+                    <span class="p-button-label"></span>
+                  </button>
+                </td> -->
+
+                <td style="display: none;" class="text-center align-middle">{{usuario.id}}</td>
+                <td class="text-center align-middle">{{usuario.nombre}}</td>
+                <td class="text-center align-middle">{{usuario.apellido}}</td>
+                <td class="text-center align-middle">{{usuario.correo_electronico}}</td>
+                <td class="text-justify align-middle">{{usuario.roles}}</td>
+                
+
+
+                <td class="text-right">
+                  <select [(ngModel)]="usuario.nuevoRol" (change)="seleccionarRol($event)">
+                    <option value="Admin">admin</option>
+                    <option value="Usuario">usuario</option>
+                  </select>
+                  <!-- <button class="btn btn-primary" (click)="modificarInformacionUsuario(id)">Modificar</button> -->
+                </td>
+
+                <!-- <td class="text-justify align-middle">{{usuario.fechac}}</td> -->
+
+                <td class="text-center align-middle">
+                  <div class="btn-group" role="group">
+                    <button pbutton="" pripple="" type="button" label="Success" class="btn btn-success"
+                      (click)="modificarInformacionUsuario(usuario.id)" data-toggle="tooltip" data-placement="top"
+                      title="Modificar" style="margin-right: 5px;">
+                      <span class="p-button-label">Modificar</span>
+                    </button>
+
+                    <button pbutton="" pripple="" type="button" label="Danger" class="btn btn-danger"
+                      (click)="eliminar(usuario)" data-toggle="tooltip" data-placement="top" title="Eliminar">
+                      <span class="p-button-label">Eliminar</span>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>

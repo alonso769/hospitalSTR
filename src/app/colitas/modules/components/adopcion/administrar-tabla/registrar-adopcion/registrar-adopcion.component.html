@@ -1,0 +1,141 @@
+<app-nav-bar></app-nav-bar>
+<!-- Panel de bloqueo -->
+<p-blockUI [blocked]="blockedPanel">
+    <p-progressSpinner></p-progressSpinner>
+</p-blockUI>
+
+
+<div class="fondo"
+    [style]="{'display': 'flex', 'justify-content':'right', 'height': '110vh', 'align-items':'center','padding-right':'100px'}">
+
+    <!-- Miniatura de la imagen -->
+    <div *ngIf="imageSrc">
+      <!-- Tarjeta con la previsualización de la imagen -->
+      <div class="card" style="display: flex; flex-direction: column; align-items: center; margin-right: 300px;">
+          <p>Imagen Seleccionada</p>
+          <div style="display: flex; flex-direction: column; align-items: center;">
+              <img [src]="imageSrc" alt="Imagen seleccionada" style="max-width: 400px; max-height: 400px; border-radius: 10px; box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);">
+          </div>
+      </div>
+  </div>
+    
+    <div class="lg:w-3"
+        [style]="{'background-color': 'white', 'padding':'25px', 'border-radius':'20px','box-shadow':'0px 0px 25px rgba(0,0,0,0.4)'}">
+        <div class="text-center mb-3 justify-content-center align-content-center">
+            <!-- <img src="assets/colitas/images/logo_login.png" alt="Image" height="200" class="mb-1">
+            <div class="text-900 text-3xl font-medium mb-4 mt-2"> -->
+                <b class="mt-2" [style]="{'font-size':'30px'}">Regístro de Nueva mascota</b>
+            <!-- </div> -->
+        </div>
+        <form [formGroup]="formRegistro" (ngSubmit)="registrarMascotaAdopcion()" action="../../../../../../../assets/colitas/adopciones" method="POST" enctype="multipart/form-data">
+            <div class="text-right mb-3 justify-content-center align-content-center">
+                <!-- <img src="assets/colitas/images/logo_login.png" alt="Image" height="200" class="mb-1">
+                <div class="text-900 text-3xl font-medium mb-4 mt-2"> -->
+                    <b class="mt-2" style="color:brown; font-size: 20px;">Datos de la mascota</b>
+                <!-- </div> -->
+            </div>
+            
+            <!-- Nombres Input -->
+            <label for="text" class="block text-900 font-medium mb-2">Nombres</label>
+            <span class="p-input-icon-left w-12 mb-2">
+              <i class="pi pi-user"></i>
+              <input type="text" pInputText class="w-full" placeholder="Nombre" formControlName="nombre" autocomplete="nombre" />
+            </span>
+          
+            <!-- Edad and Raza Inputs -->
+            <div class="flex justify-between">
+              <!-- Edad Input -->
+              <div class="w-1/2 pr-2">
+                <label for="text" class="block text-900 font-medium mb-2">Edad</label>
+                <span class="p-input-icon-left w-full mb-2">
+                  <i class="pi pi-star-fill"></i>
+                  <input type="text" pInputText class="w-full" placeholder="Edad" formControlName="edad" autocomplete="edad" />
+                </span>
+              </div>
+          
+              <!-- Raza Input -->
+              <div class="w-1/2 pl-2">
+                <label for="text" class="block text-900 font-medium mb-2">Raza</label>
+                <span class="p-input-icon-left w-full mb-2">
+                  <i class="pi pi-check"></i>
+                  <input type="text" pInputText class="w-full" placeholder="Raza" formControlName="raza" autocomplete="" />
+                </span>
+              </div>
+            </div>
+          
+            <!-- Descripcion Input -->
+            <label for="text" class="block text-900 font-medium mb-2 text-lg">Descripcion</label>
+            <span class="p-input-icon-left w-full mb-2">
+                <textarea pInputTextarea rows="3" class="w-full border rounded-x1 border-gray-300 focus:border-blue-500"  style="outline-color: #1e90ff;" placeholder="Ingresa una Descripcion" formControlName="descripcion"></textarea>
+            </span>
+
+          
+        <div class="card">
+
+            <div class="text-left mb-3 justify-content-center align-content-center">
+                <!-- <img src="assets/colitas/images/logo_login.png" alt="Image" height="200" class="mb-1">
+                <div class="text-900 text-3xl font-medium mb-4 mt-2"> -->
+                    <b class="mt-2" style="color:brown; font-size: 20px;">Persona a cargo</b>
+                <!-- </div> -->
+            </div>
+
+
+            <!-- Nombre del Encargado  -->
+            <label for="text" class="block text-900 font-medium mb-2">Nombre completo del Encargado</label>
+            <span class="p-input-icon-left w-full mb-2">
+              <i class="pi pi-user"></i>
+              <input type="text" pInputText class="w-full" placeholder="Nombre completo" formControlName="encargado" autocomplete="" />
+            </span>
+          
+
+            <div class="flex justify-between">
+                <div class="w-1/2 pr-2">
+                <label for="text" class="block text-900 font-medium mb-2">Dni</label>
+                <span class="p-input-icon-left w-full mb-2">
+                    <i class="pi pi-id-card"></i>
+                    <input type="text" pInputText class="w-full" placeholder="Dni" formControlName="dni" autocomplete="edad" />
+                </span>
+                </div>
+
+                <div class="w-1/2 pl-2">
+                <label for="text" class="block text-900 font-medium mb-2">Nro. Teléfono</label>
+                <span class="p-input-icon-left w-full mb-2">
+                    <i class="pi pi-whatsapp"></i>
+                    <input type="text" pInputText class="w-full" placeholder="Telefono" formControlName="telefono" autocomplete="" />
+                </span>
+                </div>
+            </div>
+        </div><!--Termina el card de Persona a cargo-->
+
+
+
+            <!-- Imagen Input -->
+            <label class="label"></label>
+            <div style="display: flex; flex-wrap: nowrap; justify-content: right; align-items: center;">
+                <label for="file-input-2" class="custom-file-upload">
+                    Seleccionar Imagen
+                </label>
+            <input type="file" [style]="{'width':'100%', 'display': 'none'}" id="file-input-2" (change)="exportar($event)" formControlName="linkImg">
+            </div>
+
+          <!--Visualizar imagen-->
+            <!-- <div style="display: flex; flex-direction: column; align-items: center;">
+                <img [src]="imageSrc" *ngIf="imageSrc" alt="Imagen seleccionada" style="max-width: 200px; max-height: 200px; margin: 20px auto; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+              </div> -->
+
+            <div class="flex align-items-center justify-content-between mb-4 mt-3"></div>
+          
+            <button pButton pRipple label="Registrar Información" class="w-full" type="submit"></button>
+          
+            <div style="text-align: center; color: red; padding-top: 10px;">{{msgRegistro}}</div>
+          
+            <div class="flex align-items-center justify-content-right mt-5">
+              <a class="font-medium no-underline ml-2 text-blue-500 text-right cursor-pointer" (click)="router.navigate(['/administrarTabla'])">Volver
+                <i class="pi pi-external-link" [style]="{'font-size': '10px', 'margin-left': '1px'}"></i>
+              </a>
+            </div>
+          </form>
+    </div>
+</div>
+
+<app-footer></app-footer>

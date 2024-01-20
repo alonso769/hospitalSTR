@@ -1,0 +1,333 @@
+<app-nav-bar></app-nav-bar>
+
+<div class="container-fluid">
+  <div class="row">
+    <!-- Columna de la tabla -->
+    <div class="col-lg-12">
+
+
+      <div class="tabla col-12 mt-2 mb-2 p-2 md:p-8 card flex justify-content-center">
+        <div class="p-datatable-header ng-star-inserted">
+          <div class="flex flex-col md:flex-row md:justify-between md:items-center p-4">
+            <button pbutton="" pripple="" type="button" label="Secondary"
+              class="p-button p-ripple p-button-secondary p-component"
+              (click)="router.navigate(['/registrarAdopcion'])"
+              style="margin-right: 10px;">
+              <span class="p-button-label">Registrar nueva Mascota</span>
+              <span class="p-ink"></span>
+            </button>
+
+            <button pbutton="" pripple="" type="button" label="Secondary"
+              class="p-button p-ripple p-button-danger p-component"
+              (click)="router.navigate(['/administrarAdoptados'])">
+              <span class="p-button-label">Visualizar Mascotas Adoptadas</span>
+              <span class="p-ink"></span>
+            </button>
+
+            <div class="flex items-center mt-4 md:mt-0 ml-auto">
+              <span class="p-input-icon-left">
+                <i class="pi pi-search"></i>
+                <input pInputText type="text" placeholder="Buscar por Nombre" [(ngModel)]="buscarTexto"
+                    (input)="onGlobalFilter(buscarTexto)" class="p-inputtext p-component p-element w-full sm:w-auto">
+            </span>
+
+              <!-- <span class="p-input-icon-left">
+                <i class="pi pi-search"></i>
+                <input pinputtext="" type="text" placeholder="Buscar por Nombre"
+                  class="p-inputtext p-component p-element w-full sm:w-auto">
+              </span> -->
+
+              <!-- <span class="p-input-icon-left mb-2">
+                <i class="pi pi-search"></i>
+                <input pInputText type="text" #filter (input)="onGlobalFilter(dt1, $event)" placeholder="Buscar por Nombre" class="w-full"/>
+            </span> -->
+            </div>
+          </div>
+        </div>
+
+        <!--REGISTRAR-->
+        <!-- <p-dialog [(visible)]="visible" [style]="{width: '400px'}" header="Generar nuevo Registro" [modal]="true"
+          class="p-fluid" [draggable]="false">
+          <ng-template pTemplate="content">
+          <form (ngSubmit)="registrarNuevaPublicacion()" #publicacionForm="ngForm">
+            <div class="field">
+              <label for="name">Nombre</label>
+              <input type="text" pInputText required autofocus [(ngModel)]="nombre" />
+            </div>
+            <div class="field">
+              <label for="description">Edad</label>
+
+              <input type="text" pInputText required autofocus [(ngModel)]="edad" />
+            </div>
+
+            <div class="field">
+              <label for="name">Raza</label>
+              <input type="text" pInputText required autofocus [(ngModel)]="raza" />
+            </div>
+
+            <div class="field">
+              <label for="name">Descripción</label>
+              <input type="text" pInputText required autofocus [(ngModel)]="descripcion" />
+            </div>
+
+            <div class="col-sm-12">
+              <label class="label">Imagen</label> -->
+
+              <!-- <div style="display: flex; flex-wrap: nowrap; justify-content: center; align-items: center;">
+                <input pInputText type="text" [style]="{'width':'100%'}" [disabled]="true" [(ngModel)]="nombreImagen" />
+              </div> -->
+
+              <!-- <div
+                style="display: flex; flex-wrap: nowrap; justify-content: center; align-items: center; margin-top: 10px;">
+                <input pInputText type="file" [style]="{'width':'100%'}" id="file-input" (change)="exportar($event)"
+                  [(ngModel)]="linkImg">
+              </div>
+            </div>
+          </form>
+          </ng-template>
+          <ng-template pTemplate="footer">
+            <button pButton pRipple label="Cancelar" icon="pi pi-times" class="p-button-text"
+              (click)="hideDialog()"></button>
+            <button pButton pRipple label="Registrar" icon="pi pi-check" class="p-button-text"
+              (click)="grabarPublicacion()"></button>
+
+
+          </ng-template>
+
+        </p-dialog>
+        <div style="text-align: center; color: red; padding-top: 10px;">{{msgRegistro}}</div> -->
+
+
+        <!--REACTIVEFORMS-->
+        <!-- <p-dialog [(visible)]="visible" [style]="{width: '400px'}" header="Generar nuevo Registro" [modal]="true" class="p-fluid" [draggable]="false">
+  <ng-template pTemplate="content">
+    <form [formGroup]="formRegistro" (ngSubmit)="registrarPublicacion()">
+      <div class="field">
+        <label for="name">Nombre</label>
+        <input type="text" pInputText formControlName="nombre" />
+      </div>
+      <div class="field">
+        <label for="description">Edad</label>
+        <input type="text" pInputText formControlName="edad" />
+      </div>
+
+      <div class="field">
+        <label for="name">Raza</label>
+        <input type="text" pInputText formControlName="raza" />
+      </div>
+
+      <div class="field">
+        <label for="name">Descripción</label>
+        <input type="text" pInputText formControlName="descripcion" />
+      </div>
+
+      <div class="col-sm-12">
+        <label class="label">Imagen</label>
+        <div style="display: flex; flex-wrap: nowrap; justify-content: center; align-items: center; margin-top: 10px;">
+          <input pInputText type="file" [style]="{'width':'100%'}" id="file-input" formControlName="nombreImagen" />
+        </div>
+      </div>
+    </form>
+  </ng-template>
+  <ng-template pTemplate="footer">
+    <button pButton pRipple label="Registrarse" class="w-full" type="submit"
+                [disabled]="!formRegistro.valid"></button>
+  </ng-template>
+  <div style="text-align: center; color: red; padding-top: 10px;">{{msgRegistro}}</div>
+</p-dialog> -->
+
+
+
+        <!--Modificar-->
+        <!-- <p-dialog [(visible)]="visible" [style]="{width: '400px'}" header="Modificar Registro" [modal]="true" class="p-fluid"
+    [draggable]="false">
+    <ng-template pTemplate="content">
+        <div class="field">
+            <label for="name">Nombre</label>
+            <input type="text" pInputText required autofocus [(ngModel)]="nombreImagen"/>
+        </div>
+        <div class="field">
+            <label for="description">Edad</label>
+            <input type="text" pInputText required autofocus [(ngModel)]="nombreImagen"/>
+        </div>
+
+        <div class="field">
+          <label for="name">Raza</label>
+          <input type="text" pInputText required autofocus [(ngModel)]="nombreImagen"/>
+        </div>
+
+        <div class="field">
+          <label for="name">Descripción</label>
+          <input type="text" pInputText required autofocus [(ngModel)]="nombreImagen"/>
+        </div>
+
+        <div class="col-sm-12">
+          <label class="label">Imagen</label>
+
+          <div style="display: flex; flex-wrap: nowrap; justify-content: center; align-items: center;">
+            <input pInputText type="text" [style]="{'width':'100%'}" [disabled]="true" [(ngModel)]="nombreImagen" />
+          </div>
+
+          <div style="display: flex; flex-wrap: nowrap; justify-content: center; align-items: center; margin-top: 10px;">
+            <input pInputText type="file" [style]="{'width':'100%'}" id="file-input" (change)="exportar($event)" [(ngModel)]="nombreImagen" >
+          </div>
+        </div>
+
+    </ng-template>
+    <ng-template pTemplate="footer">
+        <button pButton pRipple label="Cancelar" icon="pi pi-times" class="p-button-text" (click)="hideDialog()"></button>
+        <button pButton pRipple label="Publicar" icon="pi pi-check" class="p-button-text" (click)="saveProduct()"></button>
+    </ng-template>
+</p-dialog> -->
+
+
+        <div class="table">
+          <table class="table table-bordered table-hover" style="border-collapse: collapse;">
+            <thead class="thead-dark">
+              <tr>
+                <th style="display: none;">ID</th>
+                <th class="text-center align-middle">Imagen</th>
+                <th class="text-center align-middle">Nombre</th>
+                <th class="text-center align-middle">Edad</th>
+                <th class="text-center align-middle">Raza</th>
+                <th class="text-center align-middle">Descripción</th>
+                <th class="text-center align-middle">Encargado</th>
+                <th class="text-center align-middle">Contacto</th>
+                <th class="text-center align-middle">DNI</th>
+
+                <th class="text-center align-middle">Acciones</th>
+                <!-- <th class="text-center align-middle">Adoptado!</th> -->
+                <th class="text-center align-middle">Eliminar</th>
+
+            </thead>
+
+            <tbody>
+              <tr *ngFor="let publicacion of publicaciones">
+
+                <td style="display: none;" class="text-center align-middle">{{publicacion.id}}</td>
+                <td class="text-center align-middle">
+                  <div class="d-flex align-items-center">
+                    <!-- <button pbutton="" pripple="" type="button" label="Danger" class="btn btn-close"
+                            (click)="eliminar(publicacion)" data-toggle="tooltip" data-placement="top" title="Eliminar" style="margin-right: 5px;">
+                            <span class="p-button-label"></span>
+                    </button> -->
+                    <img src="{{publicacion.linkImg}}" alt="..." style="max-width: 70px;" class="card-img-top imagen-redonda shadow-6">
+                  </div>
+                </td>
+                <td class="text-center align-middle">{{publicacion.nombre}}</td>
+                <!-- <div *ngFor="let nombre of publicacion.nombre">{{ nombre }}</div> -->
+                <td class="text-center align-middle">{{publicacion.edad}}</td>
+                <td class="text-center align-middle">{{publicacion.raza}}</td>
+                <td class="text-justify align-middle">{{publicacion.descripcion}}</td>
+                <td class="text-justify align-middle">{{publicacion.encargado}}</td>
+                <td class="text-justify align-middle">{{publicacion.telefono}}</td>
+                <td class="text-justify align-middle">{{publicacion.dni}}</td>
+
+                <td class="text-center align-middle">
+                  <div class="btn-group" role="group">
+                    <button pbutton="" pripple="" type="button" label="Success" class="btn btn-success"
+                    (click)="OnModificar(publicacion.id)" data-toggle="tooltip" data-placement="top" title="Modificar" style="margin-right: 5px;">
+                      <span class="p-button-label">Modificar</span>
+                    </button>
+                    <!-- (click)="router.navigate(['/modificarAdopcion'])" -->
+
+                    <button pbutton="" pripple="" type="button" label="Danger" class="p-button p-ripple p-button-secondary p-component"
+                      (click)="enviarLog(publicacion)" data-toggle="tooltip" data-placement="top" title="Eliminar">
+                      <span class="p-button-label">Adoptado</span>
+                    </button>
+
+                    <!-- <button pbutton="" pripple="" type="button" label="Danger" class="btn btn-danger"
+                      (click)="eliminar(publicacion)" data-toggle="tooltip" data-placement="top" title="Eliminar" style="margin-left: 5px;">
+                      <span class="p-button-label">Eliminar</span>
+                    </button> -->
+                  </div>
+                </td>
+                <td class="text-justify align-middle">
+                  <button pbutton="" pripple="" type="button" label="Danger" class="btn btn-close"
+                      (click)="eliminar(publicacion)" data-toggle="tooltip" data-placement="top" title="Eliminar" style="margin-left: 5px;">
+                      <span class="p-button-label"></span>
+                    </button>
+                </td>
+
+
+                <!-- <td>
+                  <button pbutton="" pripple="" type="button" label="Danger" class="btn btn-dark"
+                      (click)="eliminar(publicacion)" data-toggle="tooltip" data-placement="top" title="Eliminar">
+                      <span class="p-button-label">Eliminar</span>
+                    </button>
+                </td> -->
+
+              </tr>
+            </tbody>
+
+          </table>
+          <p-paginator styleclass="p-paginator-bottom" class="p-element ng-star-inserted">
+            <div class="p-paginator-bottom p-paginator p-component ng-star-inserted"><!----><span
+                class="p-paginator-current ng-star-inserted">Showing 1 to 10 of 30 entries</span><!----><button
+                type="button" pripple=""
+                class="p-ripple p-element p-paginator-first p-paginator-element p-link p-disabled ng-star-inserted"
+                disabled="">
+              </button><span class="p-paginator-pages ng-star-inserted"><button type="button" pripple=""
+                  class="p-ripple p-element p-paginator-page p-paginator-element p-link p-highlight ng-star-inserted"> 1
+                  <span class="p-ink"></span></button><button type="button" pripple=""
+                  class="p-ripple p-element p-paginator-page p-paginator-element p-link ng-star-inserted"> 2 <span
+                    class="p-ink"></span></button><button type="button" pripple=""
+                  class="p-ripple p-element p-paginator-page p-paginator-element p-link ng-star-inserted"> 3 <span
+                    class="p-ink"></span></button><!----></span><!----><!----><button type="button" pripple=""
+                class="p-ripple p-element p-paginator-next p-paginator-element p-link">
+              </button><button type="button" pripple=""
+                class="p-ripple p-element p-paginator-last p-paginator-element p-link ng-star-inserted">
+              </button><!----><!----><p-dropdown styleclass="p-paginator-rpp-options"
+                class="p-element p-inputwrapper p-inputwrapper-filled ng-untouched ng-pristine ng-star-inserted ng-valid">
+                <div class="p-paginator-rpp-options p-dropdown p-component">
+                  <div class="p-hidden-accessible"><input type="text" readonly="" aria-haspopup="listbox" pautofocus=""
+                      role="combobox" class="p-element" aria-expanded="false"></div><span
+                    class="p-element p-dropdown-label p-inputtext ng-star-inserted"
+                    id="pr_id_99_label">10<!----><!----><!----></span><!----><!----><!----><!---->
+                  <div role="button" aria-label="dropdown trigger" aria-haspopup="listbox" class="p-dropdown-trigger">
+                    <!---->
+
+                  </div><p-overlay class="p-element ng-tns-c3177733119-59 ng-star-inserted"><!----></p-overlay>
+                </div>
+              </p-dropdown><!----><!----></div><!---->
+          </p-paginator>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="col-lg-2">
+      <div class="formulario col-12 mt-8 mb-2 p-2 md:p-2 card flex justify-content-center">
+        <form [formGroup]="formRegistro" (ngSubmit)="registrarPublicacion()">
+          <div class="field row">
+            <label for="name">Nombre</label>
+            <input type="text" pInputText formControlName="nombre" />
+          </div>
+          <div class="field row">
+            <label for="description">Edad</label>
+            <input type="text" pInputText formControlName="edad" />
+          </div>
+
+          <div class="field row">
+            <label for="name">Raza</label>
+            <input type="text" pInputText formControlName="raza" />
+          </div>
+
+          <div class="field row">
+            <label for="name">Descripción</label>
+            <input type="text" pInputText formControlName="descripcion" />
+          </div>
+
+          <div class="col-sm-12 row">
+            <label class="label">Imagen</label>
+            <div style="display: flex; flex-wrap: nowrap; justify-content: center; align-items: center; margin-top: 10px;">
+              <input pInputText type="file" [style]="{'width':'100%'}" id="file-input" formControlName="nombreImagen" />
+            </div>
+          </div>
+        </form>
+
+          <button type="submit" class="btn btn-primary" (click)="registrarPublicacion()">Enviar</button>
+
+      </div>
+    </div> -->
+  </div><!--arriba acaba el formulario-->
+</div>

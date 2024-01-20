@@ -1,0 +1,91 @@
+<header>
+    <div class="container ">
+        <div class="row col-lg-12">
+            <div class="logo col-lg-2 col-md-2 col-sm-2 col-2">
+                <div class="logo">
+                    <img src="assets/colitas/images/archivo_login.png" height="55" alt="logo">
+                </div>
+            </div>
+
+            <div class="pre-menu col-lg-10 col-md-2 col-sm-8 col-8 ">
+
+
+                <div class="menu_icon" [class.menu_iconClass]="menu_icon_variable" (click)="openMenu()" style="position: fixed; top: 20; right: 0;">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+
+
+                <div class="menu" [class.menuClasse]="menuVariable">
+                    <ul>
+
+                        <li>
+                            <a (click)="router.navigate(['/'])" routerLink="/home">
+                                <span>Inicio</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a (click)="router.navigate(['/instalaciones'])" routerLink="/instalaciones">
+                                <span>Ingresar</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"
+                                (click)="router.navigate(['/adopciones'])" routerLink="/adopciones">
+                                <span>Consultar</span>
+                            </a>
+
+                        </li>
+
+                        <!-- <li *ngIf="isAdmin">
+                            <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"
+                                (click)="router.navigate(['/admin'])" routerLink="/administracion">
+                                <span>Admin</span>
+                            </a>
+                        </li> -->
+
+                        <li>
+                            <a (click)="router.navigate(['/donaciones'])" routerLink="/donaciones">
+                                <span>Editar</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a (click)="router.navigate(['/publicaciones'])" routerLink="/publicaciones">
+                                <span>Publicaciones</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a (click)="router.navigate(['/'], {fragment: 'contactanos'})" routerLink="/">
+                                <span>Contactanos</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a (click)="router.navigate(['/nosotros'])" routerLink="/nosotros">
+                                <span>Nosotros</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+            <button #userButton pButton pRipple label="{{usuario || 'Iniciar Sesión'}}"
+                class="col-lg-2 col-md-8 col-sm-2 col-2 p-button-text p-button-raised p-button-rounded border-none font-light line-height-2 text-blue-500"
+                *ngIf="usuario; else loginButton" (click)="toggleMenu(userButton, $event)">
+                <span *ngIf="rol" class="rol-badge">{{ rol }}</span>
+            </button>
+
+            <ng-template #loginButton>
+                <button pButton pRipple label="Iniciar Sesión"
+                    class="col-lg-2 col-md-8 col-sm-2 col-2 p-button-text p-button-raised p-button-rounded border-none font-light line-height-2 text-blue-500"
+                    (click)="handleUserButtonClick()">
+                </button>
+            </ng-template>
+
+            <p-menu *ngIf="usuario && usuario !== 'Iniciar Sesión'" #menu [popup]="true" [model]="menuItems"
+                [style]="{ 'left': '74%', 'top': '75%' }"></p-menu>
+
+        </div>
+    </div>
+</header>

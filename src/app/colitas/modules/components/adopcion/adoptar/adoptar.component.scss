@@ -1,0 +1,70 @@
+// :host ::ng-deep .col-12 {
+//     padding: 1rem;
+//     width: 60%;
+// }
+
+// .card {
+//     background: var(--surface-card);
+//     border: 1px solid var(--surface-border);
+//     padding: 2rem;
+//     margin-top: 2rem;
+//     margin-bottom: 2rem;
+//     box-shadow: var(--card-shadow);
+//     border-radius: 12px;
+// }
+
+// @media (max-width: 768px) {
+//     .card {
+//         width: 90%;
+//     }
+// }
+
+
+.fondo {
+    position: relative;
+    background-image: url('/assets/colitas/images/fondoMascotas.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    margin: 0;
+    padding-top: 170px;
+    padding-bottom: 250px;
+}
+
+
+.photoImagen{
+background-color: transparent;
+}
+
+
+.photoTexto{
+background-color: rgb(212, 172, 172);
+border-radius: 20px;
+padding-top: 5px;
+padding-bottom: 5px;
+}
+
+.img{
+    
+}
+
+.button {
+
+    background-color: grey;
+    color: grey;
+ 
+
+ 
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: black; 
+    color: black; 
+}
+
+
+// .btn-volver {
+//     font-size: 0.75rem; /* Tamaño de fuente más pequeño */
+//     padding: 0.2rem 0.5rem; /* Ajusta el espaciado interno */
+//   }

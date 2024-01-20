@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+$font-family: 'Shadows Into Light', cursive;
+
+body {
+    display: flex;
+    height: 100vh;
+    margin: 0;
+}
+
+.input-style-content {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    .input-style {
+        display: grid;
+        width: 100%;
+    }
+}
+
+#izquierda {
+    flex: 3;
+    padding: 20px;
+    background-color: #f0f0f0;
+    text-align: center;
+
+}
+
+#derecha {
+    flex: 1;
+    padding: 20px;
+    background-color: #f0f0f0;
+
+}
+
+table {
+    width: 90%;
+    border-collapse: collapse;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+}
+
+th,
+td {
+    padding: 8px;
+    text-align: left;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+}
+
+input[type="submit"] {
+    background-color: #b67743;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.text-pbc {
+font-family: $font-family;
+}
+
+.content-pbc {
+    font-size: 40px !important;
+}
+
+:host ::ng-deep .p-button.p-button-outlined:enabled:hover {
+    background: rgba(255, 255, 255, 0);
+    color: #7a7a78;
+    border: 1px solid;
+}
+
+:host ::ng-deep .p-button.p-button-outlined {
+    background-color: transparent;
+    color: #2e2e2d;
+    border: 1px solid;
+}
+
+// .fondo {
+//     background-color: #4e4e4e;
+//     // background-image: url('/assets/colitas/images/texture.png');
+// }
+
+// .content-card {
+//     padding-bottom: 278px !important;
+// }
+
+.custom-file-upload {
+    display: inline-block;
+    padding: 13px 10px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 0px;
+    font-size: 11px;
+    font-family: 'Didact Gothic';
+    // font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  .custom-file-upload:hover {
+    background-color: #0069d9;
+  }
+.inputText {
+    border-radius: 0px;
+}
+  #file-input-1,#file-input-2,#file-input-3,#file-input-4 {
+    display: none;
+  }

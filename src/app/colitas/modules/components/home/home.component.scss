@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap');
+
+$font-family: 'Lobster Two', sans-serif;
+$font-family1: 'Righteous', sans-serif;
+$font-family2:'Gochi Hand', cursive;
+
+.span-text {
+    font-size: 45px !important;
+    font-family: $font-family;
+}
+
+.icon_benefit {
+    opacity: .25;
+    height: 130px;
+}
+
+.style-titule{
+    font-size: 25px !important;
+    font-family: 'Didact Gothic';
+}
+
+.content-opt {
+    font-size: 14px !important;
+    width: 30%;
+    display: inline-flex;
+    justify-content: center;
+    // text-align: justify;
+    font-family: 'Didact Gothic';
+}
+
+.fondo {
+    background-color: #f4d160be;
+}
+.content-adopta{
+    border-radius:20px;
+    background:rgba(255, 255, 255)
+}
+
+.image-dog {
+    padding: 10px;
+    height: 330px;
+    border-radius: 40px 40px 40px 40px;
+    opacity: 0.9;
+}
+
+.img-content {
+    padding: 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.label-adp {
+    font-family: $font-family1;
+    font-size: 30px !important;
+}
+
+.label-content {
+    font-family: 'Didact Gothic';
+    font-size: 30px !important;
+
+}
+
+:host ::ng-deep .p-button.p-button-outlined:enabled:hover {
+    background: rgb(255 255 255);
+    color: #f7b53a;
+    border: 1px solid;
+}
+
+:host ::ng-deep .p-button.p-button-outlined {
+    background-color: transparent;
+    color: #f5d97c;
+    border: 1px solid;
+}
+
+
+// .content-contacto{
+//     border-radius:20px;
+//     background:rgba(250, 247, 247, 0.644)
+// }
+
+.btn-circle.btn-xl {
+    width: 100px;
+    height: 100px;
+    padding: 10px 22px;
+    border-radius: 50px;
+    // font-size: 24px;
+    // line-height: 1.33;
+}
+
+.contac-text {
+    font-size: 50px !important;
+    font-family: $font-family2;
+}
+
+.contac-p {
+    font-family: 'Didact Gothic';
+    font-size: 20px !important;
+    margin-bottom: 20px;
+
+}
+.contac-num {
+    font-family: 'Didact Gothic';
+    font-size: 15px !important;
+}
+
+a {
+    color: #ffffff;
+}

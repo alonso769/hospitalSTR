@@ -1,0 +1,61 @@
+<app-nav-bar></app-nav-bar>
+
+<div class="fondo" style="z-index: 1000">
+    <div class="py-3 md:px-6 text-center text-pbc">
+        <div class="mb-2 font-bold text-2xl">
+            <span class="text-900 span-text content-pbc">ADOPTA<span class="text-red-300 span-text content-pbc">ME!</span></span>
+        </div>
+    </div>
+
+    <div class="py-2 px-4 lg:px-8 mt-0 mx-0 lg:mx-8 content-card">
+        <button pButton pRipple label="Administración de catálogo de adopciones" *ngIf="rol" type="button" class="p-button-outlined button" routerLink="/administrarTabla"></button>
+    
+        <div class="col-12 mt-2 mb-2 p-2 md:p-8 card flex justify-content-center">
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col-md-4 col-sm-6 col-xs-12" *ngFor="let publicacion of publicaciones">
+
+                    <div *ngIf="rol" style="display: flex; justify-content: flex-end; align-items: center;">
+                        <span *ngIf="esTarjetaBloqueada(publicacion.id)" class="estado-adopcion">En proceso de adopción</span>
+                        <span class="pi" [ngClass]="{'pi-lock': esTarjetaBloqueada(publicacion.id), 'pi-lock-open': !esTarjetaBloqueada(publicacion.id)}" (click)="toggleBloquearCard(publicacion.id)"></span>
+                    </div>
+
+                    <div class="card h-100 shadow" [ngClass]="{'bloqueado': esTarjetaBloqueada(publicacion.id)}">
+                        <!-- [ngClass]="{'bloqueado': bloquearCard}" -->
+
+                       
+                            <!-- Contenido del card... -->
+                            <!-- <span class="pi" [ngClass]="{'pi-lock': esTarjetaBloqueada(publicacion.id), 'pi-lock-open': !esTarjetaBloqueada(publicacion.id)}" (click)="toggleBloquearCard(publicacion.id)"></span> -->
+    
+
+                            <div class="card-img-container" style="width: 100%; max-width: 400px; padding-bottom: 100%; position: relative; overflow: hidden;">
+                                <img src="{{urlImagenes+publicacion.img}}" class="card-img-top imagen-redonda shadow-6 imagen-pequeña" style="object-fit: cover; width: 100%; height: 95%; position: absolute; top: 0; left: 0;" alt="{{publicacion.img}}">
+                            </div>
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="text-blue-300">Adoptas a:</i><span style="color: rgb(76, 170, 53); "> {{publicacion.nombre}}</span></h5>
+                            <p class="card-text" style="margin-bottom: 0.2rem;">Edad: {{publicacion.edad}}</p>
+                            <p class="card-text">Raza: {{publicacion.raza}}</p>
+                            <p class="card-text" style="text-align: justify;">{{publicacion.descripcion}}</p>
+                        </div>
+                        <!-- <div style="display: flex; justify-content: right;"><p-button label="Adoptar" (click)="OnAdoptar(publicacion.id)"></p-button></div> -->
+    
+                        <div class="card">
+                            <p class="card-text" style="text-align: justify;"><i>Persona a cargo: </i> <b><span style="color: rgb(137, 155, 133); ">{{publicacion.encargado}}</span></b></p>
+                            <!-- <p class="card-text" style="text-align: justify;"><i>Dni: </i> <b><span style="color: rgb(137, 155, 133); ">{{publicacion.dni}}</span></b></p> -->
+                            <p class="card-text" style="text-align: justify;"><i>Teléfono: </i> <b><span style="color: rgb(137, 155, 133); ">{{publicacion.telefono}}</span></b></p>
+                        </div>
+                        
+                        <div style="display: flex; justify-content: right;"><p-button label="INGRESAR" (click)="OnAdoptar(publicacion.id)"></p-button></div>
+
+                        <!-- <div class="flex" style="justify-content: space-between;">
+                            <div style="display: flex; justify-content: right;"><p-button label="Bloquear" (click)="bloquearCard(publicacion.id)"></p-button></div>
+                            <div style="display: flex; justify-content: right;"><p-button label="Adoptar" (click)="OnAdoptar(publicacion.id)"></p-button></div>
+                        </div> -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <app-footer></app-footer> -->

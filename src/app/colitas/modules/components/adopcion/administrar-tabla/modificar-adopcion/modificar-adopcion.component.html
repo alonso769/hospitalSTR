@@ -1,0 +1,100 @@
+<app-nav-bar></app-nav-bar>
+<!-- Panel de bloqueo -->
+<p-blockUI [blocked]="blockedPanel">
+    <p-progressSpinner></p-progressSpinner>
+</p-blockUI>
+
+
+<div class="fondo"
+    [style]="{'display': 'flex', 'justify-content':'right', 'height': '100vh', 'align-items':'center','padding-right':'100px'}">
+    
+    <div class="lg:w-3"
+        [style]="{'background-color': 'white', 'padding':'25px', 'border-radius':'20px','box-shadow':'0px 0px 25px rgba(0,0,0,0.4)'}">
+        <div class="text-center mb-3 justify-content-center align-content-center">
+            <!-- <img src="assets/colitas/images/logo_login.png" alt="Image" height="200" class="mb-1">
+            <div class="text-900 text-3xl font-medium mb-4 mt-2"> -->
+                <b class="mt-2" [style]="{'font-size':'30px'}">Modificar datos de Mascota</b>
+            <!-- </div> -->
+        </div>
+        <form [formGroup]="formRegistro" (ngSubmit)="modificarPublicacion(id)" action="../../../../../../../assets/colitas/adopciones" method="POST" enctype="multipart/form-data">
+
+            <div *ngIf="mascotaModificar">
+                <label for="text" class="block text-900 font-medium mb-2 ">Nombres</label>
+                <span class="p-input-icon-left w-full mb-2">
+                    <i class="pi pi-user"></i>
+                    <input type="text" pInputText class="w-full" placeholder="Nombre" formControlName="nombre"
+                        autocomplete="nombre"  [ngModel]="mascotaModificar.nombre" style="color: rgb(185, 57, 57); font-weight: bold;" />
+                </span>
+
+            
+
+                <label for="text" class="block text-900 font-medium mb-2 ">Edad</label>
+                <span class="p-input-icon-left w-full mb-2">
+                    <i class="pi pi-star-fill"></i>
+                    <input type="text" pInputText class="w-full" placeholder="Edad" formControlName="edad"
+                        autocomplete="edad" [ngModel]="mascotaModificar.edad" style="color: rgb(185, 57, 57); font-weight: bold;"/>
+                </span>
+
+                
+
+
+                <label for="text" class="block text-900 font-medium mb-2 ">Raza</label>
+                <span class="p-input-icon-left w-full mb-2">
+                    <i class="pi pi-check"></i>
+                    <input type="text" pInputText class="w-full" placeholder="Raza" formControlName="raza"
+                        autocomplete=""  [ngModel]="mascotaModificar.raza" style="color: rgb(185, 57, 57); font-weight: bold;"/>
+                </span>
+
+
+                <label for="text" class="block text-900 font-medium mb-2 ">Descripcion</label>
+                <span class="p-input-icon-left w-full mb-2">
+                    <i class="pi pi-id-card"></i>
+                    <input type="text" pInputText class="w-full" placeholder="Ingresa una Descripcion" formControlName="descripcion"
+                        autocomplete="" />
+                </span>
+
+                
+                <label class="label">Imagen</label>
+                    <!-- <div style="display: flex; flex-wrap: nowrap; justify-content: center; align-items: center;">
+                        <input type="file" [style]="{'width':'100%'}" id="file-input-2" (change)="exportar($event)" formControlName="linkImg">
+                    </div>  
+                    
+                    <img [src]="imageSrc" *ngIf="imageSrc"  alt="Imagen seleccionada" style="max-width: 200px; max-height: 200px; float: right; padding-bottom: 20px; padding-top: 20px;">
+                     -->
+
+                    <div style="display: flex; flex-wrap: nowrap; justify-content: center; align-items: center;">
+                        <input type="file" [style]="{'width':'100%'}" id="file-input-2" (change)="exportar($event)" formControlName="linkImg">
+                    </div>
+                    
+                    <!-- Mostrar la imagen actualmente registrada -->
+                    <img [src]="mascotaModificar.linkImg" *ngIf="mascotaModificar.linkImg" alt="Imagen actual" style="max-width: 200px; max-height: 200px; float: right; padding-bottom: 20px; padding-top: 20px;">
+                    
+                    <!-- Mostrar la imagen nueva seleccionada -->
+                    <img [src]="imageSrc" *ngIf="imageSrc" alt="Imagen seleccionada" style="max-width: 200px; max-height: 200px; float: right; padding-bottom: 20px; padding-top: 20px;">
+
+
+                <div class="flex align-items-center justify-content-between mb-4 mt-3">
+
+                </div>
+
+                <button pButton pRipple label="Modificar la Información" class="w-full" type="submit"></button>
+                <!-- [disabled]="!formRegistro.valid" -->
+
+                <div style="text-align: center; color: red; padding-top: 10px;">{{msgRegistro}}</div>
+
+                <div class="flex align-items-center justify-content-rigth mt-5">
+                    <!-- <div class="flex align-items-center">
+                        <label for="rememberme1">¿Ya tienes una cuenta?</label>
+                    </div> -->
+                    <a class="font-medium no-underline ml-2 text-blue-500 text-right cursor-pointer"
+                        (click)="router.navigate(['/administrarTabla'])">Volver
+                        <i class="pi pi-external-link" [style]="{'font-size': '10px', 'margin-left': '1px'}"></i>
+                    </a>
+
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<app-footer></app-footer>

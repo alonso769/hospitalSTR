@@ -1,0 +1,24 @@
+.fondo {
+    position: relative;
+    background-image: url('/assets/colitas/images/fondoMascotas.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    margin: 0;
+    padding-top: 170px;
+    padding-bottom: 250px;
+}
+
+.photoImagen {
+    background-color: transparent;
+}
+.informacionCard{
+    background-color: transparent;
+}
+
+.photoTexto {
+    background-color: rgb(165, 157, 157);
+    border-radius: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}

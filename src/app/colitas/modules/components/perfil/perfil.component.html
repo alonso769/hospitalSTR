@@ -1,0 +1,118 @@
+<app-nav-bar></app-nav-bar>
+
+<div class="fondo">
+  <div class=" py-3 md:px-6 text-center text-pbc">
+    <div class="mb-2 font-bold text-2xl">
+      <span class="text-900 span-text content-pbc">Visualiza o Modifica<span
+          class="text-red-300 span-text content-pbc">tus datos!</span>
+      </span>
+
+      <!-- <span class="text-900 span-text"> ser parte!</span> -->
+    </div>
+  </div>
+
+  <div class="col-12">
+    <div class="container">
+      <div class="p-fluid p-formgrid grid">
+        <div class="col-10 md:col-6 justify-content-center photoImagen">
+          <div class="card informacionCard">
+            <h1><b>Información del Perfil</b></h1>
+            <p><b>Nombres:</b> {{ nombres }}</p>
+            <p><b>Apellidos:</b> {{ apellidos }}</p>
+            <p><b>Rol:</b><b [style.color]="'red'"> {{ rol }}</b></p>
+            <p><b>Correo electrónico:</b> {{ email }}</p>
+            <!-- <p>Nombre: {{nombres}}</p>
+            <p>Apellido: {{apellidos}}</p> -->
+
+            <div class="card">
+            <p><b>{{nombres}}</b> si deseas realizar un cambio de contraseña de forma segura dale click al siguiente enlace<a routerLink="/auth/recuperar" class="ml-3">Recuperar Contraseña</a></p>
+          </div>
+
+            <div style="text-align: center;">
+              <button class="btn btn-secondary" (click)="mostrarFormulario()" style="padding: 0.2rem 0.5rem; width: 250px;">Actualizar
+                información</button>
+            </div>
+          </div>
+        </div>
+        <div class="row col-12 md:col-6 photoTexto" *ngIf="mostrarFormularioFlag" [@fadeInOut]="mostrarFormularioFlag">
+          <div class="card">
+            <!-- <h1><b>Formulario</b></h1>
+              <p><b>Usuario:</b> {{ usuario }}</p>
+              <p><b>Rol:</b><b> {{ rol }}</b></p>
+              <p><b>Correo electrónico:</b> {{ email }}</p> -->
+            <form [formGroup]="formRegistro" (ngSubmit)="modificarInformacionUsuario(id)">
+              <div class="row">
+                <div class="col">
+                  <h1><b [style.color]="'grey'">Actualiza tus datos</b></h1>
+                
+                
+                  <!-- <button class="btn btn-secondary" style=" width: 170px;">Actualiza tus datos</button> -->
+                </div>
+              </div>
+
+              <div *ngIf="usuarioModificar">
+                <!-- <label for="text" class="block text-900 font-medium mb-2 ">Codigo de Usuario</label>
+                <span class="p-input-icon-left w-full mb-2">
+                  <i class="pi pi-user"></i>
+                  <input type="text" pInputText class="w-full" placeholder="" formControlName="id"
+                    autocomplete="nombre" [ngModel]="usuarioModificar.id" style="color: rgb(185, 57, 57); font-weight: bold;" />
+                </span> -->
+
+                <label for="text" class="block text-900 font-medium mb-2 ">Nombres</label>
+                <span class="p-input-icon-left w-full mb-2">
+                  <i class="pi pi-user"></i>
+                  <input type="text" pInputText class="w-full" placeholder="" formControlName="nombres"
+                    autocomplete="nombre" [ngModel]="usuarioModificar.nombres" style="color: rgb(185, 57, 57); font-weight: bold;" />
+                </span>
+
+                <label for="text" class="block text-900 font-medium mb-2 ">Apellidos</label>
+                <span class="p-input-icon-left w-full mb-2">
+                  <i class="pi pi-user"></i>
+                  <input type="text" pInputText class="w-full" placeholder="" formControlName="apellidos"
+                    autocomplete="nombre" [ngModel]="usuarioModificar.apellidos" style="color: rgb(185, 57, 57); font-weight: bold;" />
+                </span>
+
+
+
+                <label for="text" class="block text-900 font-medium mb-2 ">Correo Electrónico</label>
+                <span class="p-input-icon-left w-full mb-2">
+                  <i class="pi pi-google"></i>
+                  <input type="text" pInputText class="w-full" placeholder="" formControlName="correo"
+                    autocomplete="edad" [ngModel]="usuarioModificar.correo" style="color: rgb(185, 57, 57); font-weight: bold;" />
+                </span>
+
+
+
+
+                <label for="text" class="block text-900 font-medium mb-2 ">ROL del Usuario</label>
+                <span class="p-input-icon-left w-full mb-2">
+                  <i class="pi pi-ban"></i>
+                  <input type="text" pInputText class="w-full" placeholder="" formControlName="rol" autocomplete=""
+                    [ngModel]="usuarioModificar.rol" style="color: rgb(185, 57, 57); font-weight: bold;" />
+                </span>
+
+              </div>
+
+              <div style="text-align: center;">
+                <button class="btn btn-danger" style="margin-bottom: 10px; width: 250px;">Actualizar!</button>
+              </div>
+
+              <div style="text-align: right;">
+                <button (click)="cerrarFormulario()" class="btn btn-debug" style="padding: 0.2rem 0.5rem; width: 100px;">Cerrar</button>
+              </div>
+            </form>
+
+
+
+            <!-- <button class="btn btn-dark" (click)="formularioAdopcion()">Formulario de Adopción</button>
+              <p>Si estas interesado en adoptar a esta mascotita en busca de un hogar, dale Click al boton que te redirigira a un formulario y asi poder obtener tus datos. ¡GRACIAS!</p> -->
+
+            <!-- <div style="text-align: center;">
+                <button class="btn btn-secondary" style="padding: 0.2rem 0.5rem; width: 250px;" (click)="volver()">Volver al catálogo de mascotas</button>
+              </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

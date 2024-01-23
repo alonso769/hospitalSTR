@@ -31,7 +31,7 @@
             <div class="text-right mb-3 justify-content-center align-content-center">
                 <!-- <img src="assets/colitas/images/logo_login.png" alt="Image" height="200" class="mb-1">
                 <div class="text-900 text-3xl font-medium mb-4 mt-2"> -->
-                    <b class="mt-2" style="color:brown; font-size: 20px;">Datos del documento</b>
+                    <b class="mt-2" style="color:brown; font-size: 20px;">Datos de la persona</b>
                 <!-- </div> -->
             </div>
             
@@ -55,16 +55,16 @@
           
               <!-- Raza Input -->
               <div class="w-1/2 pl-2">
-                <label for="text" class="block text-900 font-medium mb-2">Raza</label>
+                <label for="text" class="block text-900 font-medium mb-2">Genero</label>
                 <span class="p-input-icon-left w-full mb-2">
                   <i class="pi pi-check"></i>
-                  <input type="text" pInputText class="w-full" placeholder="Raza" formControlName="raza" autocomplete="" />
+                  <input type="text" pInputText class="w-full" placeholder="Genero" formControlName="raza" autocomplete="" />
                 </span>
               </div>
             </div>
           
             <!-- Descripcion Input -->
-            <label for="text" class="block text-900 font-medium mb-2 text-lg">Descripcion</label>
+            <label for="text" class="block text-900 font-medium mb-2 text-lg">Contenido</label>
             <span class="p-input-icon-left w-full mb-2">
                 <textarea pInputTextarea rows="3" class="w-full border rounded-x1 border-gray-300 focus:border-blue-500"  style="outline-color: #1e90ff;" placeholder="Ingresa una Descripcion" formControlName="descripcion"></textarea>
             </span>
@@ -75,13 +75,13 @@
             <div class="text-left mb-3 justify-content-center align-content-center">
                 <!-- <img src="assets/colitas/images/logo_login.png" alt="Image" height="200" class="mb-1">
                 <div class="text-900 text-3xl font-medium mb-4 mt-2"> -->
-                    <b class="mt-2" style="color:brown; font-size: 20px;">Persona a cargo</b>
+                    <b class="mt-2" style="color:brown; font-size: 20px;">DATOS DE CONTACTO</b>
                 <!-- </div> -->
             </div>
 
 
             <!-- Nombre del Encargado  -->
-            <label for="text" class="block text-900 font-medium mb-2">Nombre completo del Encargado</label>
+            <label for="text" class="block text-900 font-medium mb-2">Nombre completo del archivo</label>
             <span class="p-input-icon-left w-full mb-2">
               <i class="pi pi-user"></i>
               <input type="text" pInputText class="w-full" placeholder="Nombre completo" formControlName="encargado" autocomplete="" />
@@ -113,11 +113,10 @@
             <label class="label"></label>
             <div style="display: flex; flex-wrap: nowrap; justify-content: right; align-items: center;">
                 <label for="file-input-2" class="custom-file-upload">
-                    Seleccionar Imagen
+                    Seleccionar archivo
                 </label>
             <input type="file" [style]="{'width':'100%', 'display': 'none'}" id="file-input-2" (change)="exportar($event)" formControlName="linkImg">
             </div>
-
           <!--Visualizar imagen-->
             <!-- <div style="display: flex; flex-direction: column; align-items: center;">
                 <img [src]="imageSrc" *ngIf="imageSrc" alt="Imagen seleccionada" style="max-width: 200px; max-height: 200px; margin: 20px auto; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">

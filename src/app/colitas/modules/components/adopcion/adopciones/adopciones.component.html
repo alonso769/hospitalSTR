@@ -15,7 +15,7 @@
                 <div class="col-md-4 col-sm-6 col-xs-12" *ngFor="let publicacion of publicaciones">
 
                     <div *ngIf="rol" style="display: flex; justify-content: flex-end; align-items: center;">
-                        <span *ngIf="esTarjetaBloqueada(publicacion.id)" class="estado-adopcion">En proceso de adopción</span>
+                        <span *ngIf="esTarjetaBloqueada(publicacion.id)" class="estado-adopcion">DOCUMENTO IMPORTANTE NO BORRAR</span>
                         <span class="pi" [ngClass]="{'pi-lock': esTarjetaBloqueada(publicacion.id), 'pi-lock-open': !esTarjetaBloqueada(publicacion.id)}" (click)="toggleBloquearCard(publicacion.id)"></span>
                     </div>
 

@@ -31,36 +31,36 @@
                                 <span>Archivo</span>
                             </a>
                         </li>
-                        <!-- <li>
+                        <li>
                             <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"
                                 (click)="router.navigate(['/adopciones'])" routerLink="/adopciones">
                                 <span>Consultar</span>
                             </a>
 
-                        </li> -->
+                        </li>
 
-                        <!-- <li *ngIf="isAdmin">
+                        <li *ngIf="isAdmin">
                             <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"
                                 (click)="router.navigate(['/admin'])" routerLink="/administracion">
                                 <span>Admin</span>
                             </a>
-                        </li> -->
+                        </li>
 
-                        <li>
+                        <!-- <li>
                             <a (click)="router.navigate(['/donaciones'])" routerLink="/donaciones">
                                 <span>Editar</span>
                             </a>
-                        </li>
+                        </li> -->
                         <li>
                             <a (click)="router.navigate(['/publicaciones'])" routerLink="/publicaciones">
                                 <span>Ingresar</span>
                             </a>
                         </li>
-                        <li>
+                        <!-- <li>
                             <a (click)="router.navigate(['/'], {fragment: 'contactanos'})" routerLink="/">
                                 <span>Contactanos</span>
                             </a>
-                        </li>
+                        </li> -->
                         <li>
                             <a (click)="router.navigate(['/nosotros'])" routerLink="/nosotros">
                                 <span>Nosotros</span>
@@ -84,7 +84,7 @@
             </ng-template>
 
             <p-menu *ngIf="usuario && usuario !== 'Iniciar Sesión'" #menu [popup]="true" [model]="menuItems"
-                [style]="{ 'left': '74%', 'top': '75%' }"></p-menu>
+                [style]="{ 'left': '74%', 'top': '85%' }"></p-menu>
 
         </div>
     </div>

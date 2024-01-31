@@ -10,9 +10,9 @@ import { ResponseColitas } from 'src/app/colitas/models/response';
 export class PublicacionesService {
 
 
-  private apiUrl = API_COLITAS_ROUTES.PUBLICACIONES.OBTENER_PUBLICACIONES;
-  private apiUrlRegistrar = API_COLITAS_ROUTES.PUBLICACIONES.INSERTAR_PUBLICACION;
-  private apiUrlEliminarPorID = API_COLITAS_ROUTES.PUBLICACIONES.ELIMINAR_PUBLICACION;
+  private apiUrl = API_COLITAS_ROUTES.DOCUMENTOS.OBTENER_DOCUMENTOS;
+  private apiUrlRegistrar = API_COLITAS_ROUTES.DOCUMENTOS.INSERTAR_DOCUMENTOS;
+  private apiUrlEliminarPorID = API_COLITAS_ROUTES.DOCUMENTOS.ELIMINAR_DOCUMENTOS;
   private apiUrlCargarImagen = API_COLITAS_ROUTES.IMAGENES.CARGAR_IMAGENES;
 
 

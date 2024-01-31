@@ -4,7 +4,7 @@ export const API_COLITAS = {
     SEGURIDAD: `${ENV.apiColitas}auth/`,
     MAIL: `${ENV.apiColitas}mail/`,
     ADOPCIONES: `${ENV.apiColitas}adopciones/`,
-    PUBLICACIONES: `${ENV.apiColitas}publicaciones/`,
+    DOCUMENTOS: `${ENV.apiColitas}documentos/`,
     PUBLIC: 'public/',
     IMAGENES: `${ENV.apiColitas}imagenes/`,
 }
@@ -32,10 +32,10 @@ export const API_COLITAS_ROUTES = {
     MAIL: {
         CAMBIAR_CONTRASENIA: `${API_COLITAS.MAIL}cambiarcontrasenia`
     },
-    PUBLICACIONES: {
-        OBTENER_PUBLICACIONES: `${API_COLITAS.PUBLICACIONES}buscar`,
-        INSERTAR_PUBLICACION: `${API_COLITAS.PUBLICACIONES}registrar`,
-        ELIMINAR_PUBLICACION: `${API_COLITAS.PUBLICACIONES}eliminar`,
+    DOCUMENTOS: {
+        OBTENER_DOCUMENTOS: `${API_COLITAS.DOCUMENTOS}buscar`,
+        INSERTAR_DOCUMENTOS: `${API_COLITAS.DOCUMENTOS}registrar`,
+        ELIMINAR_DOCUMENTOS: `${API_COLITAS.DOCUMENTOS}eliminar`,
     },
 
     ADOPCIONES: {

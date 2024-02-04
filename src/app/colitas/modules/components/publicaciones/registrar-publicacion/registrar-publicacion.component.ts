@@ -37,8 +37,7 @@ export class RegistrarPublicacionComponent {
       this.formRegistro = this.fb.group({
         // usuario:['null', Validators.required],
         titulo: ['', Validators.required],
-        contenido: ['', Validators.required],
-        linkImg: ['null', Validators.required],
+        linkDoc: ['null', Validators.required],
       });
     }
     protected usuario: string = '';
@@ -94,12 +93,11 @@ export class RegistrarPublicacionComponent {
           // Objeto sin imagen
           const publicacionesSinImagen = {
             titulo: this.formRegistro.get('titulo').value,
-            contenido: this.formRegistro.get('contenido').value,
-            linkImg: '',
+            linkDoc: '',
           };
     
           // Obtener el archivo del formulario
-          const fileInput = this.formRegistro.get('linkImg');
+          const fileInput = this.formRegistro.get('linkDoc');
           const file = fileInput ? fileInput.value : null;
     
           // Verificar si hay una imagen para cargar
@@ -112,7 +110,7 @@ export class RegistrarPublicacionComponent {
             const cargarImagenResponse = await this._publicacionesService.cargarImagen(formData).toPromise();
     
             // Actualizar el objeto adopciones con el nombre de la imagen
-            publicacionesSinImagen.linkImg = file.name;
+            publicacionesSinImagen.linkDoc = file.name;
     
             console.log('Imagen cargada exitosamente:', cargarImagenResponse);
           }

@@ -49,7 +49,7 @@ export class NavBarComponent implements OnInit {
     console.log('Usuario logeado:',this.ObtenerUsuarioSessionStorage())
 
     this.rol = this.ObtenerUsuarioSessionStorage()? this.ObtenerUsuarioSessionStorage().rol : '';
-    // console.log(this.ObtenerUsuarioSessionStorage())
+    console.log(this.ObtenerUsuarioSessionStorage())
 
     this.obtenerTodosUsuarios();
 

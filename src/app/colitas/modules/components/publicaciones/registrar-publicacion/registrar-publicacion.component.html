@@ -21,12 +21,12 @@
                 <p>Usuario: <b>{{ usuario }}</b></p>
             </div>
 
-            <label for="text" class="block text-900 font-medium mb-2 ">Usuario</label>
+            <!-- <label for="text" class="block text-900 font-medium mb-2 ">Usuario</label>
             <span class="p-input-icon-left w-full mb-2">
                 <i class="pi pi-user"></i>
                 <input type="text" pInputText class="w-full" placeholder="Inicia Sesión para visualizar" formControlName="usuario"
                     autocomplete="nombre" />
-            </span>
+            </span> -->
 
             <label for="text" class="block text-900 font-medium mb-2 ">Título</label>
             <span class="p-input-icon-left w-full mb-2">
@@ -35,12 +35,12 @@
                     autocomplete="nombre" />
             </span>
 
-            <label for="text" class="block text-900 font-medium mb-2 ">Contenido</label>
+            <!-- <label for="text" class="block text-900 font-medium mb-2 ">Contenido</label>
             <span class="p-input-icon-left w-full mb-2">
                 <i class="pi pi-exclamation-circle"></i>
                 <input type="text" pInputText class="w-full" placeholder="Contenido" formControlName="contenido"
                     autocomplete="edad" />
-            </span>
+            </span> -->
 
             <!--Para la imagen-->
             <label class="label"></label>
@@ -48,7 +48,7 @@
                 <label for="file-input-2" class="custom-file-upload">
                     Seleccionar archivo
                 </label>
-            <input type="file" [style]="{'width':'100%', 'display': 'none'}" id="file-input-2" (change)="exportar($event)" formControlName="linkImg">
+            <input type="file" [style]="{'width':'100%', 'display': 'none'}" id="file-input-2" (change)="exportar($event)" formControlName="linkDoc">
             </div>
 
           

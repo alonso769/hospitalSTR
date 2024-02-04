@@ -23,18 +23,17 @@ export class PublicacionesService {
     return this.http.get<ResponseColitas>(this.apiUrl);
   }
 
-  registrarPublicacion(publicaciones: { titulo: string, contenido: string, linkImg: string }): Observable<ResponseColitas> {
+  registrarPublicacion(publicaciones: { titulo: string, linkDoc: string }): Observable<ResponseColitas> {
     const url = `${this.apiUrlRegistrar}`;
     return this.http.post<ResponseColitas>(url, publicaciones);
   }
 
 
-  //Usar este con Token
-  // registrarPublicacion(publicaciones:{ titulo: string, contenido: string, linkImg: string }, authToken: string): Observable<ResponseColitas> {
+  // Usar este con Token
+  // registrarPublicacion(publicaciones:{ titulo: string, linkDoc: string }, authToken: string): Observable<ResponseColitas> {
   //   const url = `${this.apiUrlRegistrar}`;
   //   const headers = new HttpHeaders({
   //     'Authorization': `Bearer ${authToken}`
-  //     // Agrega otros encabezados según sea necesario
   //   });
 
   //   // return this.http.post<ResponseColitas>(`${this.apiUrlRegistrar}/registrarPublicacion`, publicaciones, { headers });

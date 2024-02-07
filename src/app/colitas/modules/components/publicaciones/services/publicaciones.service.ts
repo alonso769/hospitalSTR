@@ -23,9 +23,9 @@ export class PublicacionesService {
     return this.http.get<ResponseColitas>(this.apiUrl);
   }
 
-  registrarPublicacion(publicaciones: { titulo: string, linkDoc: string }): Observable<ResponseColitas> {
+  registrarPublicacion(documentos: { titulo: string, linkDoc: string }): Observable<ResponseColitas> {
     const url = `${this.apiUrlRegistrar}`;
-    return this.http.post<ResponseColitas>(url, publicaciones);
+    return this.http.post<ResponseColitas>(url, documentos);
   }
 
 

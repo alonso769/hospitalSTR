@@ -12,7 +12,7 @@
         <div class="text-center mb-3 justify-content-center align-content-center">
             <!-- <img src="assets/colitas/images/logo_login.png" alt="Image" height="200" class="mb-1">
             <div class="text-900 text-3xl font-medium mb-4 mt-2"> -->
-                <b class="mt-2" [style]="{'font-size':'30px'}">Ingresar nuevo archivo</b>
+                <b class="mt-2" [style]="{'font-size':'30px'}">Ingresar nueva publicación</b>
             <!-- </div> -->
         </div>
         <form [formGroup]="formRegistro" (ngSubmit)="registrarNuevaPublicacion()">
@@ -35,18 +35,12 @@
                     autocomplete="nombre" />
             </span>
 
-            <!-- <label for="text" class="block text-900 font-medium mb-2 ">Contenido</label>
-            <span class="p-input-icon-left w-full mb-2">
-                <i class="pi pi-exclamation-circle"></i>
-                <input type="text" pInputText class="w-full" placeholder="Contenido" formControlName="contenido"
-                    autocomplete="edad" />
-            </span> -->
 
             <!--Para la imagen-->
             <label class="label"></label>
             <div style="display: flex; flex-wrap: nowrap; justify-content: right; align-items: center;">
                 <label for="file-input-2" class="custom-file-upload">
-                    Seleccionar archivo
+                    Seleccionar Imagen
                 </label>
             <input type="file" [style]="{'width':'100%', 'display': 'none'}" id="file-input-2" (change)="exportar($event)" formControlName="linkDoc">
             </div>

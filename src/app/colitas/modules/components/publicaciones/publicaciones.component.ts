@@ -92,7 +92,7 @@ export class PublicacionesComponent implements OnInit {
       const responseColitas: ResponseColitas = await this._publicacionesService.obtenerPublicaciones().toPromise();
 
       responseColitas.data.forEach(p => {
-        p.linkImg = `${this.urlImagenes}${p.img}`;
+        p.linkDoc = `${this.urlImagenes}${p.doc}`;
         p.usuario = p.usuariocreador;
         // p.fechaPublicacion = `${this.formatoFechasPublicacion(p.fechaPublicacion)}`
         p.fechaPublicacion = p.fecha;

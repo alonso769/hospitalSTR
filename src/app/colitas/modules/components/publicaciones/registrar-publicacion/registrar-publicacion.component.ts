@@ -59,7 +59,7 @@ export class RegistrarPublicacionComponent {
   
       if (file) {
         this.formRegistro.patchValue({
-          linkImg: file
+          linkDoc: file
         });
   
         // Vista previa de la imagen
